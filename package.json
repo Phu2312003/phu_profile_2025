@@ -1,0 +1,57 @@
+{
+  "name": "luong-duc-phu-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website for Luong Duc Phu - Front-End Developer",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server --port=3000 --open=/index.html",
+    "dev": "npx live-server --port=3000 --open=/index.html --watch=assets",
+    "build": "npm run minify-css && npm run minify-js",
+    "minify-css": "npx clean-css-cli -o assets/css/main.min.css assets/css/main.css assets/css/components.css assets/css/animations.css",
+    "minify-js": "npx terser assets/js/main.js assets/js/animations.js assets/js/dark-mode.js -o assets/js/bundle.min.js",
+    "lint": "npx eslint assets/js/",
+    "format": "npx prettier --write assets/js/ assets/css/",
+    "test": "echo \"No tests specified\" && exit 0",
+    "deploy": "npm run build && echo \"Ready for deployment\""
+  },
+  "keywords": [
+    "portfolio",
+    "frontend",
+    "reactjs",
+    "javascript",
+    "html",
+    "css",
+    "web-development",
+    "responsive-design"
+  ],
+  "author": {
+    "name": "Luong Duc Phu",
+    "email": "luongducphu@email.com",
+    "url": "https://github.com/luongducphu"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luongducphu/portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luongducphu/portfolio/issues"
+  },
+  "homepage": "https://luongducphu.github.io/portfolio",
+  "devDependencies": {
+    "clean-css-cli": "^5.6.2",
+    "eslint": "^8.57.0",
+    "live-server": "^1.2.2",
+    "prettier": "^3.2.5",
+    "terser": "^5.24.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
