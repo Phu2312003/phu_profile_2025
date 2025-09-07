@@ -5,8 +5,9 @@
   "main": "index.html",
   "scripts": {
     "start": "npx live-server --port=3000 --open=/index.html",
-    "dev": "npx live-server --port=3000 --open=/index.html --watch=assets",
-    "build": "npm run minify-css && npm run minify-js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "minify-css": "npx clean-css-cli -o assets/css/main.min.css assets/css/main.css assets/css/components.css assets/css/animations.css",
     "minify-js": "npx terser assets/js/main.js assets/js/animations.js assets/js/dark-mode.js -o assets/js/bundle.min.js",
     "lint": "npx eslint assets/js/",
