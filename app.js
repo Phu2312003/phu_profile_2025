@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const path = require('path');
 const connectDB = require('./config/db');
 const userRoutes = require('./src/routes/userRoutes');
 
@@ -7,6 +8,14 @@ const app = express();
 
 app.use(express.json());
 app.use('/api', userRoutes);
+
+// Serve static files from public directory
+app.use(express.static('public'));
+
+// Serve the main HTML page
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src/views/index.html'));
+});
 
 // Connect to database
 connectDB();
